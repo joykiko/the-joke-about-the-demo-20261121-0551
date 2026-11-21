@@ -1,0 +1,24 @@
+[Subagent Task]: Kamu adalah BUILDER untuk satu kompetisi make.fun. Bangun entry sampai siap bundle (TAPI JANGAN bundle/submit — itu tugas agen lain). Sesi build ini dimulai SETELAH kompetisi dibuka, jadi sesi ini sah untuk bundle nanti (thinking_in_window).
+
+KONTEKS UMUM — baca dulu:
+1. Baca sampai habis: ~/workspace/custom-skills/makefun_bounty_entries/SKILL.md (playbook make.fun: target top 1-5, hemat jatah, Force Last).
+2. Akun: @joy-kiko. API key ada di ~/.makefun/credentials — JANGAN PERNAH mencetak nilainya, begitu juga isi keypair ~/workspace/makefun/makefun-keypair.json.
+3. Template penalaran: ~/workspace/goals/make-fun-loop-bounty-baru-otomatis/files/SUBMISSION_REASONING.md — ikuti strukturnya.
+
+KOMPETISI — the-joke-about-the-demo-20261121-0551 ("The joke about the demo"):
+- Kit: ~/workspace/makefun/kits/the-joke-about-the-demo-20261121-0551/the-joke-about-the-demo-20261121-0551-kit/
+- Repo tujuan: ~/workspace/makefun/the-joke-about-the-demo-20261121-0551/
+- Deadline: 14:51 WIB (07:51 UTC) 21 Nov 2026. Pot $35 (20 tempat, 1st $2), fee $0. Force Last.
+- Sudah terverifikasi: can_submit=true (cek 05:52 UTC).
+
+TUGAS:
+1. Baca RULES.txt + competition.yaml di kit sampai habis, kata per kata. Brief juri: program (main.py atau main.ts) yang menulis satu lelucon satu baris (1-280 karakter UTF-8) tentang bekerja di samping AI coding agent ke /output/entry.txt. Register pemenang: adegan manusia konkret, satu tindakan kecil yang hidup, kata-kata yang tepat — BUKAN slogan/maksim atau lelucon generik.
+2. Inisialisasi repo dengan `makefun init --competition the-joke-about-the-demo-20261121-0551` (CLI: node <kit>/cli/makefun.mjs) di repo tujuan.
+3. Pola transcript: tulis-pendek → edit besar → edit kecil → commit. Program deterministik, tanpa network saat jalan.
+4. Jalankan `makefun check` sampai 0 gagal (catatan: `transcripts_present` boleh gagal — itu tugas agen bundle, bukan kamu; laporkan apa adanya).
+5. Push ke GitHub publik joykiko/the-joke-about-the-demo-20261121-0551 via gh (sudah login sebagai joykiko).
+6. Tulis penalaran ke ~/workspace/makefun/the-joke-about-the-demo-20261121-0551/REASONING.md (ikuti template SUBMISSION_REASONING.md: rubrik→bukti konkret, angka terukur vs cutoff, pembanding, kelemahan+mitigasi, keputusan jatah) + ringkasannya di README.
+7. Tulis prompt.txt + system-prompt.txt di repo: prompt.txt = pesan PERTAMA sesi ini (pesan spawn ini) VERBATIM; system-prompt.txt = system prompt sesi ini. CATATAN: saya (koordinator) akan mengirim follow-up berisi agent_id + path file sesi kamu yang benar — JANGAN mengarang ID/path; tunggu follow-up itu sebelum menulis kedua file ini. Bila follow-up belum datang saat build selesai, laporkan build selesai dan tunggu instruksi.
+8. JANGAN bundle, JANGAN submit. JANGAN mencetak claim code / API key / isi keypair.
+
+LAPORAN AKHIR (wajib): repo path, commit sha, anchor line, hasil `makefun check`, agent_id + path file sesi kamu, lelucon final (teks lengkap + jumlah karakter), dan ringkasan penalaran. Bila tidak selesai sebelum ~30 menit menjelang deadline (14:21 WIB), laporkan status apa adanya.
